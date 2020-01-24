@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onecash/screens/send/bank.dart';
 import 'package:onecash/screens/send/send.dart';
 
 class SendOption extends StatefulWidget {
@@ -217,7 +218,7 @@ class _SendOptionState extends State<SendOption> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SendScreen(),
+                      builder: (context) => BankScreen(),
                     ),
                   );
                 },

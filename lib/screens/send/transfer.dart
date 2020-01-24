@@ -4,15 +4,15 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:onecash/models/send_model.dart';
 
-class SendWidget extends StatefulWidget {
+class BankTransfer extends StatefulWidget {
   @override
-  _SendWidgetState createState() => _SendWidgetState();
+  _BankTransferState createState() => _BankTransferState();
 }
 
-class _SendWidgetState extends State<SendWidget>
+class _BankTransferState extends State<BankTransfer>
     with SingleTickerProviderStateMixin {
   String amountValue = '0.00';
-  bool showAddNote = false;
+  bool showButtonNext = false;
   bool showPageLoader = false;
   bool showSpinner = false;
   bool showChecked = false;
@@ -57,7 +57,6 @@ class _SendWidgetState extends State<SendWidget>
   }
 
   final _formKey = GlobalKey<FormState>();
-
   Widget _showPageLoader() {
     return Stack(
       children: <Widget>[
@@ -123,14 +122,13 @@ class _SendWidgetState extends State<SendWidget>
               appBar: AppBar(
                 automaticallyImplyLeading: true,
                 leading: IconButton(
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: Colors.black,
-                  ),
+                  icon: Icon(Icons.arrow_back, color: Colors.black),
                   onPressed: () => Navigator.pop(context, false),
                 ),
-                title: Text('Send to Tunde',
-                    style: TextStyle(color: Colors.black)),
+                title: Text(
+                  'Bank Transfer',
+                  style: TextStyle(color: Colors.black),
+                ),
                 centerTitle: true,
                 backgroundColor: Colors.transparent,
                 elevation: 0,
@@ -147,30 +145,30 @@ class _SendWidgetState extends State<SendWidget>
                         height: 150,
                         child: CircleAvatar(
                           backgroundColor: Colors.transparent,
-                          backgroundImage: AssetImage('assets/images/user.png'),
+                          backgroundImage: AssetImage('assets/images/bank.png'),
                         ),
                       ),
                       SizedBox(height: 15),
                       Text(
-                        'Tunde',
+                        'Access Bank',
                         style: TextStyle(
                           fontFamily: "worksans",
                           fontSize: 22,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: 10),
                       SizedBox(
                         height: 25,
                         child: FlatButton(
                           color: Colors.redAccent,
                           textColor: Colors.white,
                           child: Text(
-                            "onecash.me/manosthegods",
+                            "2302 2636 8756 67",
                             style: TextStyle(
                                 fontFamily: "worksans",
                                 color: Colors.white,
-                                fontSize: 14,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w400),
                           ),
                           onPressed: () {},
@@ -225,7 +223,7 @@ class _SendWidgetState extends State<SendWidget>
                                               navigationResult.toString();
                                           if (navigationResult.toString() !=
                                               '0.0') {
-                                            this.showAddNote = true;
+                                            this.showButtonNext = true;
                                           }
                                         });
                                       },
@@ -273,9 +271,9 @@ class _SendWidgetState extends State<SendWidget>
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Image.network(
-                                  'https://res.cloudinary.com/dgwcexlws/image/upload/v1575035253/fourjay.org-visa-mastercard-logo-png-471054_ghspjp.png',
-                                  height: 18.0,
+                                Image.asset(
+                                  'assets/images/one_cash.png',
+                                  height: 30.0,
                                   fit: BoxFit.fitHeight,
                                 ),
                                 Spacer(flex: 1),
@@ -284,14 +282,14 @@ class _SendWidgetState extends State<SendWidget>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
-                                      'MasterCard',
+                                      'OneCash',
                                       style: TextStyle(
                                           fontFamily: "worksans",
                                           fontSize: 16,
                                           fontWeight: FontWeight.w500),
                                     ),
                                     Text(
-                                      'Debit ****3017',
+                                      'Wallet ****3017',
                                       style: TextStyle(
                                           fontFamily: "worksans",
                                           fontSize: 12,
@@ -304,7 +302,6 @@ class _SendWidgetState extends State<SendWidget>
                                   icon: Icon(Icons.add,
                                       color: Colors.grey, size: 35),
                                   onPressed: () {
-                                    print('Add Dialog');
                                     showDialog(
                                         context: context,
 //                                        barrierDismissible: true,
@@ -367,15 +364,14 @@ class _SendWidgetState extends State<SendWidget>
                                                             8.0),
                                                     child: FlatButton(
                                                       child: Text(
-                                                        'MasterCard',
+                                                        'Bank Account',
                                                         style: TextStyle(
                                                           fontWeight:
                                                               FontWeight.w600,
                                                         ),
                                                       ),
                                                       onPressed: () {
-                                                        print(
-                                                            'MasterCard Account');
+                                                        print('Bank Account');
                                                       },
                                                     ),
                                                   ),
@@ -413,90 +409,9 @@ class _SendWidgetState extends State<SendWidget>
                             ),
                             SizedBox(height: 1),
                             Divider(height: 0.1, color: Colors.grey),
-                            SizedBox(height: 30),
+                            SizedBox(height: 50),
                             Opacity(
-                              opacity: this.showAddNote ? 1.0 : 0.0,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Text(
-                                    'Add Note',
-                                    style: TextStyle(
-                                      fontFamily: "worksans",
-                                      fontSize: 17,
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
-                                  IconButton(
-                                    icon: Icon(Icons.chevron_right,
-                                        color: Colors.grey, size: 35),
-                                    onPressed: () {
-                                      print('Note dialog');
-                                      showDialog(
-                                          context: context,
-                                          builder: (BuildContext context) {
-                                            return AlertDialog(
-                                              content: Form(
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: <Widget>[
-                                                    Text(
-                                                      'Add Note',
-                                                      style: TextStyle(
-                                                        fontFamily: "worksans",
-                                                        fontSize: 20,
-                                                        color: Colors.redAccent,
-                                                      ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsets.all(8.0),
-                                                      child: TextFormField(),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.all(
-                                                              8.0),
-                                                      child: RaisedButton(
-                                                        child: Text(
-                                                          'Save',
-                                                          style: TextStyle(
-                                                              color:
-                                                                  Colors.white,
-                                                              fontFamily:
-                                                                  "worksans"),
-                                                        ),
-                                                        onPressed: () {
-                                                          print('Save Note');
-                                                          Navigator.of(context)
-                                                              .pop();
-                                                        },
-                                                        color: Colors.redAccent,
-                                                      ),
-                                                    )
-                                                  ],
-                                                ),
-                                              ),
-                                            );
-                                          });
-                                    },
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(height: 1),
-                            Opacity(
-                              opacity: this.showAddNote ? 1.0 : 0.0,
-                              child: Divider(height: 0.1, color: Colors.grey),
-                            ),
-                            SizedBox(height: 30),
-                            Opacity(
-                              // opacity: 1.0,
-                              opacity: this.showAddNote ? 1.0 : 0.0,
+                              opacity: this.showButtonNext ? 1.0 : 0.0,
                               child: SizedBox(
                                 width: MediaQuery.of(context).size.width,
                                 height: 40,
@@ -505,12 +420,13 @@ class _SendWidgetState extends State<SendWidget>
                                   textColor: Colors.redAccent,
                                   disabledColor: Colors.grey,
                                   child: Text(
-                                    "Send Now",
+                                    'Send Now',
                                     style: TextStyle(
-                                        fontFamily: "worksans",
-                                        color: Colors.white,
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.w300),
+                                      fontSize: 17,
+                                      fontFamily: "worksans",
+                                      fontWeight: FontWeight.w300,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                   onPressed: () => _startPayment(),
                                   shape: RoundedRectangleBorder(

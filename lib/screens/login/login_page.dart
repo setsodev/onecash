@@ -82,7 +82,7 @@ class _LogInPageState extends State<LogInPage> {
       child: Row(
         children: <Widget>[
           Text(
-            "0",
+            "0neCash",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: _large ? 52 : (_medium ? 50 : 40),

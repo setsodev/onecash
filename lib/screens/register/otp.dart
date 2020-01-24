@@ -75,7 +75,7 @@ class _OtpScreenState extends State<OtpScreen> {
       child: Row(
         children: <Widget>[
           Text(
-            "P",
+            "0neCash",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: _large ? 52 : (_medium ? 50 : 40),

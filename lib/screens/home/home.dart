@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:onecash/models/bank_card.dart';
 import 'package:onecash/resources/database.dart' as db;
-import 'package:onecash/screens/send/send.dart';
 import 'package:onecash/screens/home/wallet_card.dart';
+import 'package:onecash/screens/send/send.dart';
 import 'package:onecash/screens/send/send_catergories.dart';
 import 'package:onecash/widgets/walletcard_widget.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         title: Text(
-          "P",
+          "0",
           style: TextStyle(
               inherit: true,
               color: Colors.black,

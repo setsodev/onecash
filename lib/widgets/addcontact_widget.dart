@@ -7,8 +7,8 @@ class AddEntryDialog extends StatefulWidget {
 
 class AddEntryDialogState extends State<AddEntryDialog> {
   bool _isButtonDisabled = true;
-  _checkInputForConfirm(double phone_number) {
-    if (phone_number > 0.0) {
+  _checkInputForConfirm(double phoneNumber) {
+    if (phoneNumber > 0.0) {
       setState(() {
         _isButtonDisabled = false;
       });
