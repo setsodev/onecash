@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DepositScreen extends StatefulWidget{
+class DepositScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _DepositScreenState();
 }
 
-class _DepositScreenState extends State<DepositScreen>{
+class _DepositScreenState extends State<DepositScreen> {
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }
-
+  Widget build(BuildContext context) => throw UnimplementedError();
 }

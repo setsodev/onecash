@@ -106,7 +106,7 @@ class WalletCardWidget extends StatelessWidget {
 
   Widget _buildCollapsed(BuildContext context) {
     BankCard card = _card;
-    double rowWidth = MediaQuery.of(context).size.width * 2 / 3;
+    // double rowWidth = MediaQuery.of(context).size.width * 2 / 3;
     Color color = themeColor == Colors.white ? Colors.black : Colors.white;
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -116,7 +116,6 @@ class WalletCardWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: themeColor,
             borderRadius: BorderRadius.circular(12.0),
-
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -124,7 +123,9 @@ class WalletCardWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(bottom: 12.0, ),
+                padding: const EdgeInsets.only(
+                  bottom: 12.0,
+                ),
                 child: Text(
                   "John Doe",
                   style: Theme.of(context).textTheme.headline.copyWith(

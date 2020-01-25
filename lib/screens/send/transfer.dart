@@ -56,7 +56,7 @@ class _BankTransferState extends State<BankTransfer>
     });
   }
 
-  final _formKey = GlobalKey<FormState>();
+  // final _formKey = GlobalKey<FormState>();
   Widget _showPageLoader() {
     return Stack(
       children: <Widget>[

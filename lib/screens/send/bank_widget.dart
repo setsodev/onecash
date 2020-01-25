@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:onecash/screens/send/send_widget.dart';
 import 'package:onecash/screens/send/transfer.dart';
 
 class BankAccount extends StatefulWidget {

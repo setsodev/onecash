@@ -56,7 +56,7 @@ class _SendWidgetState extends State<SendWidget>
     });
   }
 
-  final _formKey = GlobalKey<FormState>();
+  // final _formKey = GlobalKey<FormState>();
 
   Widget _showPageLoader() {
     return Stack(
