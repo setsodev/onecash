@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:onecash/models/send_model.dart';
+import 'package:onecash/screens/send/send.dart';
 
 class SendWidget extends StatefulWidget {
   @override
@@ -17,6 +18,15 @@ class _SendWidgetState extends State<SendWidget>
   bool showSpinner = false;
   bool showChecked = false;
   AnimationController animationController;
+
+  _transactionSuccessful() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => SendScreen(),
+      ),
+    );
+  }
 
   @override
   void initState() {
@@ -34,7 +44,7 @@ class _SendWidgetState extends State<SendWidget>
           Duration(seconds: 1),
           () => setState(() {
             showPageLoader = false;
-            Navigator.of(context).pop();
+            _transactionSuccessful();
           }),
         );
       }
@@ -129,7 +139,7 @@ class _SendWidgetState extends State<SendWidget>
                   ),
                   onPressed: () => Navigator.pop(context, false),
                 ),
-                title: Text('Send to Tunde',
+                title: Text('Send to Jane Doe',
                     style: TextStyle(color: Colors.black)),
                 centerTitle: true,
                 backgroundColor: Colors.transparent,
@@ -152,7 +162,7 @@ class _SendWidgetState extends State<SendWidget>
                       ),
                       SizedBox(height: 15),
                       Text(
-                        'Tunde',
+                        'Jane Doe',
                         style: TextStyle(
                           fontFamily: "worksans",
                           fontSize: 22,

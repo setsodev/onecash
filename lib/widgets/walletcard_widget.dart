@@ -106,7 +106,6 @@ class WalletCardWidget extends StatelessWidget {
 
   Widget _buildCollapsed(BuildContext context) {
     BankCard card = _card;
-    // double rowWidth = MediaQuery.of(context).size.width * 2 / 3;
     Color color = themeColor == Colors.white ? Colors.black : Colors.white;
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -158,7 +157,6 @@ class WalletCardWidget extends StatelessWidget {
                       card.logo,
                       height: 18.0,
                       fit: BoxFit.fitHeight,
-//                      color: themeColor == Colors.white ? null : Colors.white,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 250.0),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onecash/screens/send/bank_widget.dart';
+import 'package:onecash/screens/send/send_catergories.dart';
 
 class BankScreen extends StatefulWidget {
   @override
@@ -19,7 +20,12 @@ class _BankScreenState extends State<BankScreen> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SendOption(),
+              ),
+            );
           },
         ),
         title: Text(

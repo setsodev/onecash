@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:onecash/models/send_model.dart';
+import 'package:onecash/screens/send/bank.dart';
 
 class BankTransfer extends StatefulWidget {
   @override
@@ -17,6 +18,15 @@ class _BankTransferState extends State<BankTransfer>
   bool showSpinner = false;
   bool showChecked = false;
   AnimationController animationController;
+
+  _transactionSuccessful() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => BankScreen(),
+      ),
+    );
+  }
 
   @override
   void initState() {
@@ -34,7 +44,7 @@ class _BankTransferState extends State<BankTransfer>
           Duration(seconds: 1),
           () => setState(() {
             showPageLoader = false;
-            Navigator.of(context).pop();
+            _transactionSuccessful();
           }),
         );
       }

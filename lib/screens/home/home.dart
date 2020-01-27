@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:onecash/models/bank_card.dart';
 import 'package:onecash/resources/database.dart' as db;
+import 'package:onecash/screens/cashout/cashout.dart';
+import 'package:onecash/screens/deposit/deposit.dart';
 import 'package:onecash/screens/home/wallet_card.dart';
-import 'package:onecash/screens/send/send.dart';
+import 'package:onecash/screens/login/login_page.dart';
 import 'package:onecash/screens/send/send_catergories.dart';
 import 'package:onecash/widgets/walletcard_widget.dart';
 
@@ -57,6 +59,12 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.account_circle),
             onPressed: () {
               print('Profile');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LogInPage(),
+                ),
+              );
             },
             iconSize: 38,
           )
@@ -184,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SendScreen(),
+                      builder: (context) => CashOutScreen(),
                     ),
                   );
                 },
@@ -222,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SendScreen(),
+                      builder: (context) => DepositScreen(),
                     ),
                   );
                 },

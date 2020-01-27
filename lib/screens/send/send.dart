@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onecash/screens/send/send_catergories.dart';
 import 'package:onecash/screens/send/send_widget.dart';
 import 'package:onecash/widgets/addcontact_widget.dart';
 
@@ -20,7 +21,12 @@ class _SendScreenState extends State<SendScreen> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SendOption(),
+              ),
+            );
           },
           iconSize: 30,
         ),
@@ -115,9 +121,9 @@ class _SendScreenState extends State<SendScreen> {
                       backgroundImage: AssetImage('assets/images/user.png'),
                     ),
                   ),
-                  title:
-                      Text('Tunde', style: TextStyle(fontFamily: "worksans")),
-                  subtitle: Text('onecash.me/manosthegods',
+                  title: Text('Jane Doe',
+                      style: TextStyle(fontFamily: "worksans")),
+                  subtitle: Text('onecash.me/janedoe',
                       style: TextStyle(fontFamily: "worksans")),
                   onTap: () {
                     Navigator.of(context).push(

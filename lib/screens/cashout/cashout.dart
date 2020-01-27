@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DepositScreen extends StatefulWidget {
+class CashOutScreen extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _DepositScreenState();
+  State<StatefulWidget> createState() => _CashOutScreenState();
 }
 
-class _DepositScreenState extends State<DepositScreen> {
+class _CashOutScreenState extends State<CashOutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,10 +22,20 @@ class _DepositScreenState extends State<DepositScreen> {
           },
         ),
         title: Text(
-          'Deposit',
+          'Cashout',
           style: TextStyle(
               inherit: true, color: Colors.black, fontWeight: FontWeight.bold),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Image.asset('assets/icons/qr-code.png'),
+            padding: EdgeInsets.only(right: 20.0),
+            onPressed: () {
+              print('QR CODE');
+            },
+            iconSize: 20,
+          ),
+        ],
       ),
     );
   }
