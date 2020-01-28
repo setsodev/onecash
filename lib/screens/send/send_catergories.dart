@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onecash/screens/home/home.dart';
 import 'package:onecash/screens/send/bank.dart';
 import 'package:onecash/screens/send/send.dart';
 
@@ -20,7 +21,12 @@ class _SendOptionState extends State<SendOption> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomeScreen(),
+              ),
+            );
           },
           iconSize: 30,
         ),

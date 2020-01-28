@@ -283,8 +283,8 @@ class _SendWidgetState extends State<SendWidget>
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Image.network(
-                                  'https://res.cloudinary.com/dgwcexlws/image/upload/v1575035253/fourjay.org-visa-mastercard-logo-png-471054_ghspjp.png',
+                                Image.asset(
+                                  'assets/images/one_cash.png',
                                   height: 18.0,
                                   fit: BoxFit.fitHeight,
                                 ),
@@ -294,7 +294,7 @@ class _SendWidgetState extends State<SendWidget>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
-                                      'MasterCard',
+                                      'OneCash',
                                       style: TextStyle(
                                           fontFamily: "worksans",
                                           fontSize: 16,
