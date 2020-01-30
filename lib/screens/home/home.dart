@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:onecash/models/bank_card.dart';
 import 'package:onecash/resources/database.dart' as db;
-import 'package:onecash/screens/cashout/cashout.dart';
-import 'package:onecash/screens/deposit/deposit.dart';
+import 'package:onecash/screens/home/cashout/cashout.dart';
+import 'package:onecash/screens/home/deposit/deposit.dart';
+import 'package:onecash/screens/home/send/send_catergories.dart';
 import 'package:onecash/screens/home/wallet_card.dart';
-import 'package:onecash/screens/login/login_page.dart';
-import 'package:onecash/screens/send/send_catergories.dart';
+import 'package:onecash/screens/profile/profile.dart';
 import 'package:onecash/widgets/walletcard_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,8 +16,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   void _onItemTapped(int index) {
     setState(() {
@@ -36,13 +34,13 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         title: Text(
-          "0",
+          "O",
           style: TextStyle(
               inherit: true,
               color: Colors.black,
+              fontFamily: "worksans",
               fontWeight: FontWeight.bold,
-              fontSize: 30.0,
-              decoration: TextDecoration.underline,
+              fontSize: 40.0,
               decorationColor: Colors.black,
               decorationStyle: TextDecorationStyle.solid),
         ),
@@ -62,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => LogInPage(),
+                  builder: (context) => ProfileScreen(),
                 ),
               );
             },
