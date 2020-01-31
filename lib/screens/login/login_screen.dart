@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:onecash/models/textformfield.dart';
-import 'package:onecash/screens/home/home.dart';
 import 'package:onecash/screens/login/login_page.dart';
+import 'package:onecash/screens/nav.dart';
 import 'package:onecash/widgets/responsive_widget.dart';
 
 class LogInScreen extends StatefulWidget {
@@ -215,7 +215,7 @@ class _LogInScreenState extends State<LogInScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => HomeScreen(),
+                  builder: (context) => AppNav(),
                 ),
               );
             },

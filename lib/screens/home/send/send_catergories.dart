@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onecash/screens/home/home.dart';
 import 'package:onecash/screens/home/send/bank.dart';
 import 'package:onecash/screens/home/send/send.dart';
+import 'package:onecash/screens/nav.dart';
 
 class SendOption extends StatefulWidget {
   @override
@@ -24,7 +24,7 @@ class _SendOptionState extends State<SendOption> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeScreen(),
+                builder: (context) => AppNav(),
               ),
             );
           },
